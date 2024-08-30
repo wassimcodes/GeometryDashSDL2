@@ -117,7 +117,7 @@ int main()
 		std::cout << "Failed to load font! SDL_ttf Error: " << TTF_GetError() << std::endl;
 		return 1;
 	}
-	SDL_Color textColor = { 255, 255, 255, 255 }; // White color
+	SDL_Color textColor = { 255, 255, 255, 255 }; 
 
 
 	// Play Music
@@ -128,6 +128,15 @@ int main()
 
 	// Ground tiles position
 	std::vector<GameObject> groundTiles;
+
+	float groundTileWidth = 30.0f;
+	int numGroundTiles = 63;
+
+	for (int i = 0; i < numGroundTiles; ++i)
+	{
+		float xPos = i * groundTileWidth;
+		groundTiles.push_back(GameObject(Vector2f(xPos, 150), groundTexture));
+	}
 
 	// Square obstacle position
 	std::vector<GameObject> obstacleSquare = {
@@ -171,18 +180,6 @@ int main()
 	GameObject(Vector2f(1318, 91), obstacleTriangleTexture),
 	};
 
-
-	// Ground tiles position
-	float groundTileWidth = 30.0f;
-	int numGroundTiles = 63;
-
-	for (int i = 0; i < numGroundTiles; ++i)
-	{
-		float xPos = i * groundTileWidth;
-		groundTiles.push_back(GameObject(Vector2f(xPos, 150), groundTexture));
-	}
-
-
 	// GameLoop variables
 	bool isGameRunning = true;
 	Uint32 lastTime = SDL_GetTicks();
@@ -194,13 +191,13 @@ int main()
 	float gravity = 600.0f;
 	float groundLevel = 120.0f;
 	float velocityY = 0.0f;
+	bool isJumping = false;
+	bool isOnGround = true;
 
 	// player rotation variables
 	float targetRotation = 0.0f;
 	float rotationProgress = 0.0f;
 	float rotationDuration = 0.2f;
-	bool isJumping = false;
-	bool isOnGround = true;
 
 	// Collision Detection
 	bool collisionDetected = false;
@@ -273,7 +270,7 @@ int main()
 		window.clear();
 
 		// Render background
-		window.renderBackground(backgroundTexture, cameraX);
+		window.renderBackground(backgroundTexture);
 
 		// Render floor tiles
 		for (GameObject& gt : groundTiles)
@@ -401,7 +398,7 @@ int main()
 		if (textTexture != nullptr) {
 			int textWidth = 0, textHeight = 0;
 			SDL_QueryTexture(textTexture, nullptr, nullptr, &textWidth, &textHeight);
-			SDL_Rect textRect = { 10, 10, textWidth, textHeight }; // Adjust position as needed
+			SDL_Rect textRect = { 10, 10, textWidth, textHeight };
 			SDL_RenderCopy(window.getRenderer(), textTexture, nullptr, &textRect);
 			SDL_DestroyTexture(textTexture);
 		}

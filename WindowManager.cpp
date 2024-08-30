@@ -73,7 +73,7 @@ void RenderWindow::display()
 }
 
 // Render Background image
-void RenderWindow::renderBackground(SDL_Texture* backgroundTexture, float cameraX)
+void RenderWindow::renderBackground(SDL_Texture* backgroundTexture)
 {
     SDL_Rect TargetRec;
     TargetRec.x = 0;

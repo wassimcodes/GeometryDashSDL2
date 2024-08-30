@@ -12,7 +12,7 @@ public:
     void clear();
     SDL_Rect render(GameObject& p_gameObject, float cameraX);
     void display();
-    void renderBackground(SDL_Texture* backgroundTexture, float cameraX);
+    void renderBackground(SDL_Texture* backgroundTexture);
     SDL_Renderer* getRenderer() const;
 
 private:
