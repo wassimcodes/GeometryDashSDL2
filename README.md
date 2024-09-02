@@ -3,6 +3,7 @@
 ## Introduction
 Welcome to my **Geometry Dash** "clone" game. 
 I made it using c++ and SDL2.
+
 gem.gif
 
 ## Features
