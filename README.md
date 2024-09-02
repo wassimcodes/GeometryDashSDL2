@@ -4,7 +4,7 @@
 Welcome to my **Geometry Dash** "clone" game. 
 I made it using c++ and SDL2.
 
-gem.gif
+![gem](Resources/gem.gif)
 
 ## Features
 **2D Platforming:** Jump, dodge, and navigate through various obstacles.
