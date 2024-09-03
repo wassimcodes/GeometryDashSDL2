@@ -18,7 +18,7 @@ I made it using c++ and SDL2.
 
 ## Goal
 
-The primary goal of this project is self-learning. While I didn't initially intend to publish it for professional use, I'm making it available for anyone who might find it helpful or interesting. It's a great starting point for those looking to understand the basics of C++ and OpenGL.
+The primary goal of this project is self-learning. While I didn't initially intend to publish it for professional use, I'm making it available for anyone who might find it helpful or interesting. It's a great starting point for those looking to understand the basics of C++ and SDL2.
 
 ## Permission
 
